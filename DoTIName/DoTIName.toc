@@ -1,0 +1,6 @@
+## Interface: 100007
+## Title: DoTIName
+## Author: Codex
+## Version: 1.0
+## SavedVariables: DoTINameDB,DoTINameUsername
+DoTIName.lua
