@@ -51,7 +51,7 @@ def parse_line(line):
 def make_groups(characters):
     chars = characters[:]
     groups = []
-    while True:
+    while chars:
         used = set()
         group = []
         indices = []
@@ -62,14 +62,14 @@ def make_groups(characters):
                 indices.append(i)
                 if len(group) == 5:
                     break
-        if len(group) == 5:
-            for idx in reversed(indices):
-                chars.pop(idx)
+        # Remove selected chars from the main list
+        for idx in reversed(indices):
+            chars.pop(idx)
+        if group:  # Even if group has 1-4, add it
             groups.append(group)
         else:
             break
-    return groups, chars
-
+    return groups, []
 
 def output_groups(groups, leftover):
     for g in groups:
